@@ -2,6 +2,8 @@
 
 GscNet is a private, invite-only, local-first social network. It offers profiles, a home feed, stories, reels, Explore, follows, likes, comments, saves, encrypted direct messages, notifications, media uploads, offline caching, and installable PWA behavior.
 
+Live app: <https://guugustucc.github.io/gscnet/>
+
 ## Privacy model
 
 - No email, password, or central account database.
