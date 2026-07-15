@@ -236,3 +236,64 @@ a { color: inherit; }
   .chat { height: calc(100vh - 140px); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition: none !important; } }
+
+/* GscNet 4 compact/performance pass */
+.post-card, .grid-item, .list-row, .conversation { contain: layout paint style; }
+.post-card { content-visibility: auto; contain-intrinsic-size: 680px; }
+.grid-item { content-visibility: auto; contain-intrinsic-size: 180px; }
+.post-media img, .post-media video, .grid-item img, .grid-item video { transform: translateZ(0); backface-visibility: hidden; }
+
+@media (max-width: 560px) {
+  .main-column { padding-bottom: calc(70px + var(--safe-bottom)); }
+  .mobile-header { height: calc(56px + env(safe-area-inset-top, 0px)); padding-left: 10px; padding-right: 10px; }
+  .brand.compact { font-size: 18px; }
+  .brand.compact img { width: 30px; height: 30px; border-radius: 9px; }
+  .icon-button, .more-button { width: 36px; height: 36px; }
+  .view { padding-top: 9px; }
+  .view > .section-head, .view > .stories, .view > .composer-strip, .view > .connection-banner, .view > .search-box, .view > .profile-header, .view > .profile-tabs { margin-left: 10px; margin-right: 10px; }
+  .stories { gap: 7px; padding-bottom: 5px; }
+  .story { width: 61px; flex-basis: 61px; }
+  .story-ring { width: 54px; height: 54px; padding: 2px; }
+  .story-ring .avatar { border-width: 2px; }
+  .story.add .story-ring::after { width: 18px; height: 18px; border-width: 2px; font-size: 12px; }
+  .story span { margin-top: 4px; font-size: 10px; }
+  .composer-strip { padding: 9px 10px; gap: 8px; border-radius: 16px; }
+  .composer-strip button { padding: 10px 11px; border-radius: 12px; }
+  .quick-actions .chip { width: 35px; padding: 8px; }
+  .feed { gap: 12px; }
+  .post-head { padding: 10px 11px; gap: 8px; }
+  .post-media { aspect-ratio: 1 / 1.08; }
+  .post-actions { padding: 7px 8px 1px; }
+  .post-actions button { min-width: 38px; height: 36px; font-size: 19px; }
+  .post-copy { padding: 0 11px 6px; }
+  .comments-preview { padding: 0 11px 11px; }
+  .mobile-nav { left: 7px; right: 7px; bottom: calc(6px + var(--safe-bottom)); height: 56px; border-radius: 18px; padding: 3px; }
+  .mobile-nav .nav-item { width: 44px; height: 44px; }
+  .modal-backdrop { padding: 8px; align-items: end; }
+  .modal { max-height: 92dvh; border-radius: 22px 22px 14px 14px; }
+  .modal-head { padding: 12px 14px; }
+  .modal-body { padding: 13px; }
+  .reels { height: calc(100dvh - 66px - var(--safe-bottom)); border-radius: 0; }
+  .reel { min-height: 520px; }
+  .reel-overlay { padding: 80px 62px 18px 14px; }
+  .reel-actions { right: 9px; bottom: 18px; gap: 9px; }
+  .reel-actions button { width: 43px; height: 43px; }
+  .profile-header { padding: 14px; border-radius: 20px; }
+  .profile-tabs button { padding: 10px 6px; }
+  .list-row { padding: 10px 11px; }
+  .messages { padding: 11px; gap: 7px; }
+  .message-form { padding: 8px; }
+}
+
+@media (max-width: 360px) {
+  .view > .section-head, .view > .stories, .view > .composer-strip, .view > .connection-banner, .view > .search-box, .view > .profile-header, .view > .profile-tabs { margin-left: 7px; margin-right: 7px; }
+  .story { width: 57px; flex-basis: 57px; }
+  .story-ring { width: 51px; height: 51px; }
+  .profile-top { gap: 10px; }
+  .profile-stats { gap: 11px; }
+  .avatar.lg { width: 62px; height: 62px; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .modal, .mobile-nav, .mobile-header { backdrop-filter: none; background: #11162b; }
+}
