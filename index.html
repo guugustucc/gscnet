@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b19">
+  <meta name="description" content="GscNet — your private social circle.">
+  <title>GscNet</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/gscnet-icon-1024.png">
+  <link rel="apple-touch-icon" href="assets/gscnet-icon-1024.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar glass">
+      <button class="brand" data-view="home" aria-label="GscNet home">
+        <img src="assets/gscnet-icon-1024.png" alt="">
+        <span>GscNet</span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation"></nav>
+      <button id="createButton" class="primary-action"><span>＋</span> Create</button>
+      <button id="profileMini" class="profile-mini"></button>
+    </aside>
+
+    <main class="main-column">
+      <header class="mobile-header glass">
+        <button class="brand compact" data-view="home"><img src="assets/gscnet-icon-1024.png" alt=""><span>GscNet</span></button>
+        <div class="header-actions">
+          <button class="icon-button" data-view="notifications" aria-label="Notifications">♡<b id="notifBadge"></b></button>
+          <button class="icon-button" data-view="messages" aria-label="Messages">✦</button>
+        </div>
+      </header>
+      <section id="view" class="view" aria-live="polite"></section>
+      <nav id="mobileNav" class="mobile-nav glass" aria-label="Mobile navigation"></nav>
+    </main>
+
+    <aside id="rightRail" class="right-rail"></aside>
+  </div>
+
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+  <div id="modalRoot"></div>
+  <input id="mediaPicker" type="file" accept="image/*,video/*" hidden>
+
+  <template id="postTemplate">
+    <article class="post-card glass-card">
+      <header class="post-head"></header>
+      <div class="post-media"></div>
+      <div class="post-actions"></div>
+      <div class="post-copy"></div>
+      <div class="comments-preview"></div>
+    </article>
+  </template>
+
+  <script src="mqtt.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
